@@ -15,7 +15,9 @@ function render() {
   desc.textContent = page.text;
   extra.innerHTML = "";
 
-  if (page.chart) renderChart(extra);
+  if (page.chart) {
+    renderChart(extra, page.chartType);
+  }
 
   back.disabled = i === 0;
   next.disabled = i === PAGES.length - 1;
@@ -28,6 +30,9 @@ function render() {
   });
 
   setZoom(i);
+  if (window.updateMistZoom) {
+    window.updateMistZoom(i / (PAGES.length - 1));
+  }
 }
 
 back.onclick = () => { if (i > 0) i--, render(); };
