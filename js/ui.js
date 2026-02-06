@@ -6,6 +6,7 @@ const extra = document.getElementById("extra");
 const back = document.getElementById("back");
 const next = document.getElementById("next");
 const bulletContainer = document.getElementById("bullets");
+const nav = document.querySelector('.nav');
 const app = document.querySelector(".app");
 const startScreen = document.getElementById("start-screen");
 const startBtn = document.getElementById("start-btn");
@@ -42,6 +43,15 @@ function render() {
     renderText(extra, page.content);
   } else if (page.chart) {
     renderChart(extra, page.chartType);
+  }
+
+  // If this is the research paper page, make the text container scrollable
+  if (page.title === 'JIA RESEARCH PAPER') {
+    const textEl = extra.querySelector('.text-content');
+    if (textEl) textEl.classList.add('research-paper');
+    if (nav) nav.classList.add('embedded');
+  } else {
+    if (nav) nav.classList.remove('embedded');
   }
 
   back.disabled = i === 0;

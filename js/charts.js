@@ -129,55 +129,27 @@ window.renderMilestone = function(container, stats) {
 };
 
 window.renderImageBoxes = function(container, boxCount) {
-  const STATIC_IMAGE_URL = "https://res.cloudinary.com/duim49h6r/image/upload/v1749424797/legacy_vault/syziddiq4eycjmmyf7ju.jpg";
-  const JIA_IMAGE_URL = "https://res.cloudinary.com/duim49h6r/image/upload/v1770383628/xigaepauivpxirmlxyzh.jpg";
+  // Keep the Jia image and render all provided memes (no empty upload boxes)
+  const IMAGES = [
+    "https://res.cloudinary.com/duim49h6r/image/upload/v1770383628/xigaepauivpxirmlxyzh.jpg",
+    "https://res.cloudinary.com/duim49h6r/image/upload/v1770394589/b93ca6dae5a03bafee6411db808dcbe7_shag6u.jpg",
+    "https://res.cloudinary.com/duim49h6r/image/upload/v1770394590/128f1d6c0caa8c4905f90b206642edd7_lwkijj.jpg",
+    "https://res.cloudinary.com/duim49h6r/image/upload/v1770394590/4286a9c23d2bb2664ee930b331a058e7_glizyy.jpg",
+    "https://res.cloudinary.com/duim49h6r/image/upload/v1770394589/9668b53900c96bc46ce898e35bb286b1_buro6d.jpg",
+    "https://res.cloudinary.com/duim49h6r/image/upload/v1770394589/d1ac328927c2105963045d28ac4a827e_spyzdn.jpg",
+    "https://res.cloudinary.com/duim49h6r/image/upload/v1770394588/41e73397ce7428cbabfbe5e4c455e5a8_ycfbco.jpg",
+    "https://res.cloudinary.com/duim49h6r/image/upload/v1770394588/2377c6a984a5fff7dd410b688fa50600_hx01vq.jpg",
+    "https://res.cloudinary.com/duim49h6r/image/upload/v1770394588/3ccf18e19be0d719060becb74d72ed5f_bpuagm.jpg",
+    "https://res.cloudinary.com/duim49h6r/image/upload/v1770394588/9ca9426172c54d176ce5674a73626bd7_adlgkg.jpg",
+    "https://res.cloudinary.com/duim49h6r/image/upload/v1770386521/juk9wynjrev67owbgktq.jpg"
+  ];
 
-  const boxes = Array.from({ length: boxCount })
-    .map((_, i) => {
-      // Box 0 shows the fixed test image
-      if (i === 0) {
-        return `
-          <div id="image-box-${i}" class="image-box has-image">
-            <img 
-              src="${STATIC_IMAGE_URL}" 
-              alt="Test image" 
-              class="uploaded-image" 
-              onclick="window.openImageModal('${STATIC_IMAGE_URL}')" 
-            />
-          </div>
-        `;
-      }
+  const boxes = IMAGES.map((url, i) => `
+    <div id="image-box-${i}" class="image-box has-image">
+      <img src="${url}" alt="Meme ${i + 1}" class="uploaded-image" onclick="window.openImageModal('${url}')" />
+    </div>
+  `).join("");
 
-      // Box 1 shows the Jia slide image
-      if (i === 1) {
-        return `
-          <div id="image-box-${i}" class="image-box has-image">
-            <img 
-              src="${JIA_IMAGE_URL}" 
-              alt="Jia slide image" 
-              class="uploaded-image" 
-              onclick="window.openImageModal('${JIA_IMAGE_URL}')" 
-            />
-          </div>
-        `;
-      }
-
-      // Other boxes stay as upload inputs
-      return `
-        <div id="image-box-${i}" class="image-box">
-          <label class="upload-label">
-            <input 
-              type="file" 
-              accept="image/*" 
-              onchange="window.handleImageUpload('${i}', this.files[0])"
-            />
-            <span>+ Upload Image</span>
-          </label>
-        </div>
-      `;
-    })
-    .join("");
-  
   container.innerHTML = `
     <div class="chart" style="margin-top: 20px;">
       <div class="image-grid">
@@ -188,9 +160,17 @@ window.renderImageBoxes = function(container, boxCount) {
 };
 
 window.renderText = function(container, content) {
-  container.innerHTML = `
-    <div class="chart text-content" style="margin-top: 20px; line-height: 1.8;">
-      ${content.split('\n\n').map(p => `<p>${p}</p>`).join('')}
-    </div>
-  `;
+  // If content looks like preformatted HTML (contains tags), render as-is.
+  const looksLikeHTML = /<\/?[a-z][\s\S]*>/i.test(content);
+  if (looksLikeHTML) {
+    container.innerHTML = `
+      <div class="chart text-content" style="margin-top: 20px; line-height: 1.8;">${content}</div>
+    `;
+  } else {
+    container.innerHTML = `
+      <div class="chart text-content" style="margin-top: 20px; line-height: 1.8;">
+        ${content.split('\n\n').map(p => `<p>${p}</p>`).join('')}
+      </div>
+    `;
+  }
 };

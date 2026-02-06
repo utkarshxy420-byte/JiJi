@@ -282,6 +282,14 @@ p {
   z-index: 10;
 }
 
+/* When the nav is embedded into a page (e.g., research paper), make it flow with content */
+.nav.embedded {
+  position: static;
+  bottom: auto;
+  margin-top: 18px;
+  justify-content: center;
+}
+
 button {
   padding: 12px 28px;
   border-radius: 28px;
@@ -345,6 +353,13 @@ button:disabled {
   border-radius: 8px;
   line-height: 1.6;
   animation: slideRight 0.5s ease-out;
+}
+
+/* Research paper text container should be scrollable and readable */
+.text-content.research-paper {
+  max-height: calc(70vh);
+  overflow-y: auto;
+  padding-right: 12px;
 }
 
 .bullet-item:nth-child(1) { animation-delay: 0s; border-left-color: var(--blue); }
