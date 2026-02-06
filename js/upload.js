@@ -6,6 +6,35 @@ const CLOUDINARY_API_KEY = "wPF1vV-YzSWaTm8fwAjM1B5OnR8";
 // (No persistence and no shared backend.)
 window.uploadedImages = {};
 
+async function copyTextToClipboard(text) {
+  try {
+    if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+  } catch (err) {
+    // Some browsers block clipboard without user gesture / HTTPS.
+    console.warn("Clipboard API failed, trying fallback:", err);
+  }
+
+  // Fallback: create a temporary textarea and use execCommand
+  try {
+    const el = document.createElement("textarea");
+    el.value = text;
+    el.setAttribute("readonly", "");
+    el.style.position = "fixed";
+    el.style.left = "-9999px";
+    document.body.appendChild(el);
+    el.select();
+    const ok = document.execCommand("copy");
+    document.body.removeChild(el);
+    return ok;
+  } catch (err) {
+    console.warn("Clipboard fallback failed:", err);
+    return false;
+  }
+}
+
 window.uploadImage = async function(boxId, file) {
   if (!file.type.startsWith("image/")) {
     alert("Please select an image file");
@@ -37,6 +66,12 @@ window.uploadImage = async function(boxId, file) {
         url: imageUrl,
         id: imageId,
       };
+
+      // Copy the Cloudinary link to clipboard (test behavior)
+      const copied = await copyTextToClipboard(imageUrl);
+      if (!copied) {
+        console.warn("Could not copy image URL to clipboard. URL:", imageUrl);
+      }
 
       window.renderImageBox(boxId, imageUrl);
       return true;
