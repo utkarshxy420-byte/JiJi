@@ -97,3 +97,58 @@ window.renderChart = function(container, chartType) {
     `;
   }
 };
+
+window.renderBullets = function(container, items) {
+  const bulletList = items
+    .map(item => `<li class="bullet-item">${item}</li>`)
+    .join("");
+  container.innerHTML = `
+    <div class="chart" style="margin-top: 20px;">
+      <ul class="bullet-list">
+        ${bulletList}
+      </ul>
+    </div>
+  `;
+};
+
+window.renderMilestone = function(container, stats) {
+  const statRows = Object.values(stats)
+    .map(stat => `
+      <div class="milestone-row">
+        <div class="milestone-label">${stat.label}</div>
+        <div class="milestone-value">${stat.value.toLocaleString()}</div>
+      </div>
+    `)
+    .join("");
+  
+  container.innerHTML = `
+    <div class="chart milestone-chart" style="margin-top: 20px;">
+      ${statRows}
+    </div>
+  `;
+};
+
+window.renderImageBoxes = function(container, boxCount) {
+  const boxes = Array.from({ length: boxCount })
+    .map((_, i) => `
+      <div id="image-box-${i}" class="image-box">
+        <label class="upload-label">
+          <input 
+            type="file" 
+            accept="image/*" 
+            onchange="window.handleImageUpload('${i}', this.files[0])"
+          />
+          <span>+ Upload Image</span>
+        </label>
+      </div>
+    `)
+    .join("");
+  
+  container.innerHTML = `
+    <div class="chart" style="margin-top: 20px;">
+      <div class="image-grid">
+        ${boxes}
+      </div>
+    </div>
+  `;
+};

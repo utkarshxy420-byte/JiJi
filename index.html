@@ -8,10 +8,27 @@
 </head>
 
 <body>
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-content">
+      <h2>Loading Jia</h2>
+      <div class="loading-dots">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+
+  <div id="start-screen" class="start-screen hidden">
+    <div class="start-content">
+      <h1>Welcome</h1>
+      <p>Prepare yourself</p>
+      <button id="start-btn" class="start-button">Enter the Void</button>
+    </div>
+  </div>
+
   <canvas id="space"></canvas>
   <canvas id="fog"></canvas>
 
-  <main class="app">
+  <main class="app hidden">
     <section class="content">
       <h1 id="title"></h1>
       <p id="description"></p>
@@ -27,6 +44,7 @@
   </main>
 
   <script src="js/data.js"></script>
+  <script src="js/upload.js"></script>
   <script src="js/charts.js"></script>
   <script src="js/nebula.js"></script>
   <script src="js/mist.js"></script>
