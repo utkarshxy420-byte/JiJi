@@ -1,6 +1,5 @@
-// Supabase Image Upload Module
-const SUPABASE_URL = "https://xreheedqnskwloiexmir.supabase.co";
-const SUPABASE_KEY = "sb_publishable_s95UGRzVfpccIwEpbLWikA_DWrWXJjL";
+// FreeImage.host Image Upload Module
+const API_KEY = "6d207e02198a847aa98d0a2a901485a5";
 
 window.uploadedImages = {};
 
@@ -10,35 +9,39 @@ window.uploadImage = async function(boxId, file) {
     return false;
   }
 
-  const fileName = `${boxId}-${Date.now()}-${file.name}`;
   const formData = new FormData();
   formData.append("file", file);
+  formData.append("key", API_KEY);
 
   try {
-    const response = await fetch(`${SUPABASE_URL}/storage/v1/object/jia-charts/${fileName}`, {
+    const response = await fetch("https://freeimage.host/api/1/upload", {
       method: "POST",
-      headers: {
-        authorization: `Bearer ${SUPABASE_KEY}`,
-      },
-      body: file,
+      body: formData,
     });
 
     if (!response.ok) {
       throw new Error("Upload failed");
     }
 
-    const imageUrl = `${SUPABASE_URL}/storage/v1/object/public/jia-charts/${fileName}`;
+    const result = await response.json();
+    
+    if (!result.image || !result.image.url) {
+      throw new Error("Invalid response from server");
+    }
+
+    const imageUrl = result.image.url;
+    const imageId = result.image.id;
     
     window.uploadedImages[boxId] = {
-      fileName,
       url: imageUrl,
+      id: imageId,
     };
 
     window.renderImageBox(boxId, imageUrl);
     return true;
   } catch (error) {
     console.error("Upload error:", error);
-    alert("Failed to upload image");
+    alert("Failed to upload image: " + error.message);
     return false;
   }
 };
@@ -48,22 +51,22 @@ window.deleteImage = async function(boxId) {
   if (!imageData) return;
 
   try {
-    const response = await fetch(
-      `${SUPABASE_URL}/storage/v1/object/jia-charts/${imageData.fileName}`,
-      {
-        method: "DELETE",
-        headers: {
-          authorization: `Bearer ${SUPABASE_KEY}`,
-        },
-      }
-    );
+    const response = await fetch("https://freeimage.host/api/1/delete/" + imageData.id, {
+      method: "GET",
+      headers: {
+        "key": API_KEY,
+      },
+    });
 
     if (response.ok) {
       delete window.uploadedImages[boxId];
       window.renderImageBox(boxId, null);
+    } else {
+      alert("Failed to delete image");
     }
   } catch (error) {
     console.error("Delete error:", error);
+    alert("Error deleting image");
   }
 };
 
