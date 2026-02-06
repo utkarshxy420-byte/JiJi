@@ -151,6 +151,12 @@ window.renderImageBoxes = function(container, boxCount) {
       </div>
     </div>
   `;
+
+  // After the basic boxes are rendered, rehydrate any previously
+  // uploaded images from localStorage so they persist across refreshes.
+  if (window.initializeImageBoxes) {
+    window.initializeImageBoxes(boxCount);
+  }
 };
 
 window.renderText = function(container, content) {
