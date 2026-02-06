@@ -77,7 +77,7 @@ window.renderImageBox = function(boxId, imageUrl) {
 
   if (imageUrl) {
     box.innerHTML = `
-      <img src="${imageUrl}" alt="Uploaded image" class="uploaded-image" />
+      <img src="${imageUrl}" alt="Uploaded image" class="uploaded-image" onclick="window.openImageModal('${imageUrl}')" />
       <button class="delete-btn" onclick="window.deleteImage('${boxId}')">Delete</button>
     `;
     box.classList.add("has-image");
@@ -93,6 +93,35 @@ window.renderImageBox = function(boxId, imageUrl) {
       </label>
     `;
     box.classList.remove("has-image");
+  }
+};
+
+window.openImageModal = function(imageUrl) {
+  let modal = document.getElementById("image-modal");
+  if (!modal) {
+    modal = document.createElement("div");
+    modal.id = "image-modal";
+    modal.className = "image-modal";
+    modal.innerHTML = `
+      <div class="modal-content">
+        <img id="modal-image" src="" alt="Enlarged image" />
+        <button class="modal-close" onclick="window.closeImageModal()">&times;</button>
+      </div>
+    `;
+    document.body.appendChild(modal);
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) window.closeImageModal();
+    });
+  }
+  
+  document.getElementById("modal-image").src = imageUrl;
+  modal.classList.add("active");
+};
+
+window.closeImageModal = function() {
+  const modal = document.getElementById("image-modal");
+  if (modal) {
+    modal.classList.remove("active");
   }
 };
 
