@@ -1,42 +1,10 @@
-// Cloudinary Image Upload Module
+// Cloudinary Image Upload Module (no backend API)
 const CLOUDINARY_CLOUD_NAME = "duim49h6r";
 const CLOUDINARY_API_KEY = "wPF1vV-YzSWaTm8fwAjM1B5OnR8";
 
-// --- Persistence helpers (per-browser using localStorage) ---
-const UPLOADED_IMAGES_STORAGE_KEY = "uploadedImages";
-
-function loadUploadedImagesFromStorage() {
-  try {
-    if (typeof window === "undefined" || !window.localStorage) {
-      return {};
-    }
-    const raw = window.localStorage.getItem(UPLOADED_IMAGES_STORAGE_KEY);
-    if (!raw) return {};
-    const parsed = JSON.parse(raw);
-    // Basic shape validation
-    if (parsed && typeof parsed === "object") {
-      return parsed;
-    }
-  } catch (err) {
-    console.error("Failed to load uploaded images from storage:", err);
-  }
-  return {};
-}
-
-function saveUploadedImagesToStorage() {
-  try {
-    if (typeof window === "undefined" || !window.localStorage) return;
-    window.localStorage.setItem(
-      UPLOADED_IMAGES_STORAGE_KEY,
-      JSON.stringify(window.uploadedImages || {})
-    );
-  } catch (err) {
-    console.error("Failed to save uploaded images to storage:", err);
-  }
-}
-
-// Initialize in-memory map from storage so that refresh keeps state
-window.uploadedImages = loadUploadedImagesFromStorage();
+// Simple in-memory map of uploaded images for this session only.
+// (No persistence and no shared backend.)
+window.uploadedImages = {};
 
 window.uploadImage = async function(boxId, file) {
   if (!file.type.startsWith("image/")) {
@@ -70,9 +38,6 @@ window.uploadImage = async function(boxId, file) {
         id: imageId,
       };
 
-      // Persist to localStorage so that a refresh keeps the image
-      saveUploadedImagesToStorage();
-
       window.renderImageBox(boxId, imageUrl);
       return true;
     } else {
@@ -101,7 +66,6 @@ window.deleteImage = async function(boxId) {
     const result = await response.json();
     if (result.result === "ok") {
       delete window.uploadedImages[boxId];
-      saveUploadedImagesToStorage();
       window.renderImageBox(boxId, null);
     }
   } catch (error) {
@@ -131,20 +95,6 @@ window.renderImageBox = function(boxId, imageUrl) {
       </label>
     `;
     box.classList.remove("has-image");
-  }
-};
-
-// Called after the image boxes for the page are rendered.
-// It rehydrates any previously uploaded images from localStorage.
-window.initializeImageBoxes = function(boxCount) {
-  if (!window.uploadedImages) return;
-  
-  for (let i = 0; i < boxCount; i++) {
-    const key = String(i);
-    const imageData = window.uploadedImages[key];
-    if (imageData && imageData.url) {
-      window.renderImageBox(key, imageData.url);
-    }
   }
 };
 

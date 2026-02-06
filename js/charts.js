@@ -129,19 +129,38 @@ window.renderMilestone = function(container, stats) {
 };
 
 window.renderImageBoxes = function(container, boxCount) {
+  const STATIC_IMAGE_URL = "https://res.cloudinary.com/duim49h6r/image/upload/v1749424797/legacy_vault/syziddiq4eycjmmyf7ju.jpg";
+
   const boxes = Array.from({ length: boxCount })
-    .map((_, i) => `
-      <div id="image-box-${i}" class="image-box">
-        <label class="upload-label">
-          <input 
-            type="file" 
-            accept="image/*" 
-            onchange="window.handleImageUpload('${i}', this.files[0])"
-          />
-          <span>+ Upload Image</span>
-        </label>
-      </div>
-    `)
+    .map((_, i) => {
+      // Box 0 shows the fixed test image
+      if (i === 0) {
+        return `
+          <div id="image-box-${i}" class="image-box has-image">
+            <img 
+              src="${STATIC_IMAGE_URL}" 
+              alt="Test image" 
+              class="uploaded-image" 
+              onclick="window.openImageModal('${STATIC_IMAGE_URL}')" 
+            />
+          </div>
+        `;
+      }
+
+      // Other boxes stay as upload inputs
+      return `
+        <div id="image-box-${i}" class="image-box">
+          <label class="upload-label">
+            <input 
+              type="file" 
+              accept="image/*" 
+              onchange="window.handleImageUpload('${i}', this.files[0])"
+            />
+            <span>+ Upload Image</span>
+          </label>
+        </div>
+      `;
+    })
     .join("");
   
   container.innerHTML = `
@@ -151,12 +170,6 @@ window.renderImageBoxes = function(container, boxCount) {
       </div>
     </div>
   `;
-
-  // After the basic boxes are rendered, rehydrate any previously
-  // uploaded images from localStorage so they persist across refreshes.
-  if (window.initializeImageBoxes) {
-    window.initializeImageBoxes(boxCount);
-  }
 };
 
 window.renderText = function(container, content) {
