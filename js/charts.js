@@ -130,6 +130,7 @@ window.renderMilestone = function(container, stats) {
 
 window.renderImageBoxes = function(container, boxCount) {
   const STATIC_IMAGE_URL = "https://res.cloudinary.com/duim49h6r/image/upload/v1749424797/legacy_vault/syziddiq4eycjmmyf7ju.jpg";
+  const JIA_IMAGE_URL = "https://res.cloudinary.com/duim49h6r/image/upload/v1770383628/xigaepauivpxirmlxyzh.jpg";
 
   const boxes = Array.from({ length: boxCount })
     .map((_, i) => {
@@ -142,6 +143,20 @@ window.renderImageBoxes = function(container, boxCount) {
               alt="Test image" 
               class="uploaded-image" 
               onclick="window.openImageModal('${STATIC_IMAGE_URL}')" 
+            />
+          </div>
+        `;
+      }
+
+      // Box 1 shows the Jia slide image
+      if (i === 1) {
+        return `
+          <div id="image-box-${i}" class="image-box has-image">
+            <img 
+              src="${JIA_IMAGE_URL}" 
+              alt="Jia slide image" 
+              class="uploaded-image" 
+              onclick="window.openImageModal('${JIA_IMAGE_URL}')" 
             />
           </div>
         `;
