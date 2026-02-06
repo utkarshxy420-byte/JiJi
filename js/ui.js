@@ -38,6 +38,8 @@ function render() {
     renderMilestone(extra, page.stats);
   } else if (page.type === "images") {
     renderImageBoxes(extra, page.imageBoxes);
+  } else if (page.type === "text") {
+    renderText(extra, page.content);
   } else if (page.chart) {
     renderChart(extra, page.chartType);
   }

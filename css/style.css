@@ -491,3 +491,21 @@ button:disabled {
   background: rgba(255, 0, 0, 0.4);
   border-color: rgba(255, 0, 0, 0.6);
 }
+
+.text-content {
+  font-size: 1rem;
+  opacity: 0.9;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.text-content p {
+  margin: 0 0 12px 0;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.delete-btn:hover {
+  background: rgba(255, 0, 0, 0.4);
+  border-color: rgba(255, 0, 0, 0.6);
+}

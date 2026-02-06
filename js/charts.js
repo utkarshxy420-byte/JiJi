@@ -152,3 +152,11 @@ window.renderImageBoxes = function(container, boxCount) {
     </div>
   `;
 };
+
+window.renderText = function(container, content) {
+  container.innerHTML = `
+    <div class="chart text-content" style="margin-top: 20px; line-height: 1.8;">
+      ${content.split('\n\n').map(p => `<p>${p}</p>`).join('')}
+    </div>
+  `;
+};
