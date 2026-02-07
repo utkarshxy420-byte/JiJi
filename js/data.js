@@ -29,95 +29,85 @@ window.PAGES = [
     type: "images",
     imageBoxes: 11
   },
-    {
-      title: "JIA RESEARCH PAPER",
-      text: "A Study on JIA",
-      type: "text",
-      content: `
-        <h2 style="font-weight:700;">A Study on JIA</h2>
-        <h3 style="font-style:italic;">Findings from prolonged exposure</h3>
+  {
+    title: "JIA RESEARCH PAPER",
+    text: "A Study on JIA",
+    type: "text",
+    content: `
+      <h2 style="font-weight:700;">A Study on JIA</h2>
+      <p>This paper documents the accidental and ongoing discovery of Jia, whose presence appears to improve moments, conversations, and general atmosphere, despite no formal intent to do so. The researcher, being the lifeless bafoon that he is, spent an entire evening into the compilation of thoughts and data to express the "things i wouldn't say directly" due to an unintentional ego boost.</p>
 
-        <p>This paper documents the accidental and ongoing discovery of Jia, an individual whose presence has been statistically proven to improve moments, conversations, and general atmosphere (Of which, only 15% is glaze which isn't a bad at all). The study began unintentionally and has not yet concluded.</p>
+      <h4>1 - Introduction</h4>
+      <p>Jia first appeared under normal circumstances. No anomalies were reported at the time, apart from maybe her very jolly personality which screamed <strong>NOTICE ME &gt;.&lt; I AM RIGHT HERE, LOOK AT ME.</strong> Which threw people off from suspecting her. This was later determined to be a failure of observation. She slipped unto the cracks within our observatory lab, and navigated almost perfectly to not let us catch a whiff of her anomalous existence. Later, she clouded herself with mist and haze to seem more cold, and opt a new persona which made her seem cooler than she may have been. The study takes in consideration of her change within this period and uses an overall average to metricize her not so metricizable being, yet for the sake of completion and dramatic effect, I give a fuck not.</p>
 
-        <h4>1 - Introduction</h4>
-        <p>Jia first appeared under normal circumstances. No anomalies were reported at the time, apart from maybe her very jolly personality which screamed <strong>NOTICE ME &gt;.&lt; I AM RIGHT HERE, LOOK AT ME.</strong> Which threw people off from suspecting her. This was later determined to be a failure of observation. She slipped unto the cracks within our observatory lab, and navigated almost perfectly to not let us catch a whiff of her anomalous existence. Later, she clouded herself with mist and haze to seem more cold, and opt a new persona which made her seem cooler than she may have been. The study takes in consideration of her change within this period and uses an overall average to metricize her not so metricizable being, yet for the sake of completion and dramatic effect, I give a fuck not.</p>
+      <h4>2 - Methodology</h4>
+      <p>Data for this study was collected through largely unstructured interaction, occurring across varied platforms and said conditions were ever changing given the context of our prolonged observations. Our gratherings was collected during period of great cognitive stress and disorderly flow of thoughts and opinions. While the nondeliberate inquiry of the subject was but unknown for a major stretch in the timeline, the reasercher found himself the sherluck house of the presented variable and found it within his right to reach to a satisfactory explanation with explicit mention of who, how, where, when and why. The accuracy of the emotional graphs cannot be verified given the contraints of our data. The methodology relies less on accuracy, and more on the repeated patterns of her continued warm presence. It is self defining, rather than a push towards delieberate and rigid structure.</p>
+      <p style="font-style:italic;">Data was collected through repeated interactions, many of which were not intended to be meaningful and yet were.</p>
 
-        <h4>2 - Methodology</h4>
-        <ul>
-          <li>Shit talking behind others back</li>
-          <li>Attempts to remain unaffected were unsuccessful</li>
-          <li>Emotional neutrality could not be maintained</li>
-          <li>Expectations were exceeded without warning</li>
-          <li>Results did not align with initial assumptions</li>
-          <li>Shared jokes of questionable quality</li>
-          <li>Mutual overthinking</li>
-          <li>Late-night discussions with no clear conclusion</li>
-        </ul>
-        <p style="font-size:0.85rem;">Errors were logged and quietly accepted.</p>
-        <p style="font-style:italic;">Data was collected through repeated interactions, many of which were not intended to be meaningful and yet were.</p>
+      <h4>3 - Observation</h4>
+      <ul>
+        <li>Shit talking behind other's back and feel somewhat guilty for it, yet continue anyway.</li>
+        <li>Attempts to remain nonchalant was but a mere feature that was never utilized.</li>
+        <li>Simply cannot hide her bias, though, atleast she's honest.</li>
+        <li>Play a rather uplifting role in other's morale and be the therapist they did not deserve but the therapist they got.</li>
+        <li>Is very stern about what she wants and is willing to do the work for it.</li>
+        <li>Shared overthinking braincell.</li>
+        <li>Late night deranged discussions with the air filled in a sense of intoxication.</li>
+      </ul>
 
-        <h4>3 - Observations</h4>
-        <ul>
-          <li>Exhibits rare balance of intelligence and chaos</li>
-          <li>A rare ability to be funny without intending to</li>
-          <li>Makes ordinary moments statistically better</li>
-          <li>Possesses an unexplained ability to make silence comfortable</li>
-          <li>Showcases a rather great listening and understanding fortitude</li>
-        </ul>
+      <h4>4 - Data &amp; Graphs</h4>
+      <p>The figures below are integrated into the report for readability.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <img src="https://res.cloudinary.com/duim49h6r/image/upload/v1770394590/Opera_Snapshot_2026-02-06_212423_gemini.google.com_rhf6ux.png" style="max-width:100%;border-radius:8px;" />
+        <img src="https://res.cloudinary.com/duim49h6r/image/upload/v1770394590/Opera_Snapshot_2026-02-06_212536_gemini.google.com_pzm1ke.png" style="max-width:100%;border-radius:8px;" />
+        <img src="https://res.cloudinary.com/duim49h6r/image/upload/v1770394591/Opera_Snapshot_2026-02-06_213235_gemini.google.com_s231wi.png" style="max-width:100%;border-radius:8px;" />
+        <img src="https://res.cloudinary.com/duim49h6r/image/upload/v1770394590/Opera_Snapshot_2026-02-06_212502_gemini.google.com_wrqe6u.png" style="max-width:100%;border-radius:8px;" />
+      </div>
 
-        <h4>4 - Data &amp; Graphs</h4>
-        <p>The figures below are integrated into the report for readability.</p>
-        <div style="display:flex;flex-direction:column;gap:12px;">
-          <img src="https://res.cloudinary.com/duim49h6r/image/upload/v1770394590/Opera_Snapshot_2026-02-06_212423_gemini.google.com_rhf6ux.png" style="max-width:100%;border-radius:8px;" />
-          <img src="https://res.cloudinary.com/duim49h6r/image/upload/v1770394590/Opera_Snapshot_2026-02-06_212536_gemini.google.com_pzm1ke.png" style="max-width:100%;border-radius:8px;" />
-          <img src="https://res.cloudinary.com/duim49h6r/image/upload/v1770394591/Opera_Snapshot_2026-02-06_213235_gemini.google.com_s231wi.png" style="max-width:100%;border-radius:8px;" />
-          <img src="https://res.cloudinary.com/duim49h6r/image/upload/v1770394590/Opera_Snapshot_2026-02-06_212502_gemini.google.com_wrqe6u.png" style="max-width:100%;border-radius:8px;" />
-        </div>
+      <h4>5 - Discussion</h4>
+      <p>While the mechanisms behind Jia's impact remain unclear, the consistency of the results suggests that she brings with her, the ecosystem of greatfulness and sunshine as well as pettyness.</p>
 
-        <h4>5 - Discussion</h4>
-        <p>While the mechanisms behind Jia’s impact remain unclear, the consistency of the results suggests significance beyond coincidence.</p>
+      <h4>6 - Bonus</h4>
+      <p><strong>How to deal with jia, a guide:</strong></p>
+      <ul>
+        <li>Step 1 - Don't panic</li>
+        <li>Step 2 - Panic anyways</li>
+        <li>Step 3 - Realize she is actually not an ice princess but a cutie patootie human being with emotions believe it or not who lowkey care about others but sometimes wouldn't explicitly show them outwardly in an attempt to safegaurd herself from mean people.</li>
+      </ul>
 
-        <h4>6 - Limitations</h4>
-        <ul>
-          <li>Sample size limited (one Jia)</li>
-          <li>Researcher bias unavoidable</li>
-          <li>Subject unaware of full impact</li>
-        </ul>
+      <h4>7 - Limitations</h4>
+      <ul>
+        <li>Sample size limited (one Jia)</li>
+        <li>The researcher is indeed biased</li>
+        <li>Time contraint proved rather unfateful in our study</li>
+      </ul>
 
-        <h4>7 - Conclusion</h4>
-        <p>This study concludes that Jia is not merely notable, but essential to the context in which she exists.</p>
+      <h4>8 - Conclusion</h4>
+      <p>This study concludes that Jia is not merely notable, but essential to the context in which she exists.</p>
 
-        <h4>8 - Appendix</h4>
-        <h5>A: Terminology &amp; Definitions</h5>
-        <ul>
-          <li><strong>Jia</strong> — Noun. A singular subject exhibiting warmth, intelligence, and disarming presence.</li>
-          <li><strong>Normal Conversation</strong> — Noun. A conversation that unexpectedly becomes meaningful.</li>
-          <li><strong>Silence</strong> — Noun. A shared state that does not require filling.</li>
-        </ul>
-        <p style="font-style:italic;">Some terms remain intentionally undefined.</p>
+      <h4>9 - Appendix</h4>
+      <h5>A: Terminology &amp; Definitions</h5>
+      <ul>
+        <li><strong>Jia</strong> — Noun. A singular subject exhibiting warmth, intelligence, and disarming presence.</li>
+        <li><strong>Normal Conversation</strong> — Noun. A conversation that unexpectedly becomes meaningful.</li>
+        <li><strong>Silence</strong> — Noun. A shared state that does not require filling.</li>
+      </ul>
+      <p style="font-style:italic;">Some terms remain intentionally undefined.</p>
 
-        <h5>B: Discarded Hypotheses</h5>
-        <ul>
-          <li>“This is probably temporary.”</li>
-          <li>“This won’t matter much.”</li>
-          <li>“I’ll stay objective.”</li>
-          <li>“This will be easy to explain.”</li>
-        </ul>
+      <h5>B: Peer Review</h5>
+      <p>Reviewer 1: "Is this nigga serious yooo"</p>
+      <p>Reviewer 2: "Such level of intricacy has not been spoted since the light ages."</p>
+      <p>Reviewer 3: "The subject seems to be a shining presence among the populace"</p>
 
-        <h5>C: Peer Review</h5>
-        <p>Reviewer 1: “Author appears emotionally compromised.”</p>
-        <p>Reviewer 2: “Results are compelling but suspiciously sincere.”</p>
-        <p>Reviewer 3: “Recommend acknowledgment of subject.”</p>
+      <h5>C: Acknowledgments</h5>
+      <p>The author acknowledges Jia, without whom this study would not exist. The paper boasts an astounding level of emotional error and deliberate mischaracterization for comedic effect, mixed in with the truthful and bottom heart thoughts.</p>
 
-        <h5>D: Acknowledgments</h5>
-        <p>The author acknowledges Jia, without whom this study would not exist.</p>
-
-        <h5>E: Future Work</h5>
-        <ul>
-          <li>Continued observation</li>
-          <li>Expanded dataset</li>
-          <li>No planned conclusion</li>
-        </ul>
-      `
+      <h5>D: Future Work</h5>
+      <ul>
+        <li>Continued observation</li>
+        <li>Expanded time constraint</li>
+        <li>More fellow researchers to omit personal bias</li>
+      </ul>
+    `
   }
 ];

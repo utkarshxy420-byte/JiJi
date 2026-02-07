@@ -45,13 +45,10 @@ function render() {
     renderChart(extra, page.chartType);
   }
 
-  // If this is the research paper page, make the text container scrollable
-  if (page.title === 'JIA RESEARCH PAPER') {
+  // Make text containers scrollable when they have substantial content
+  if (page.type === 'text') {
     const textEl = extra.querySelector('.text-content');
     if (textEl) textEl.classList.add('research-paper');
-    if (nav) nav.classList.add('embedded');
-  } else {
-    if (nav) nav.classList.remove('embedded');
   }
 
   back.disabled = i === 0;
