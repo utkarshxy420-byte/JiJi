@@ -30,7 +30,9 @@ function startExperience() {
 function render() {
   const page = PAGES[i];
   title.textContent = page.title;
-  desc.textContent = page.text;
+  // Render HTML in the description only when the text contains HTML tags
+  const looksLikeHTML = /<\/?[a-z][\s\S]*>/i.test(page.text || "");
+  if (looksLikeHTML) desc.innerHTML = page.text; else desc.textContent = page.text;
   extra.innerHTML = "";
 
   if (page.type === "bullets") {
@@ -49,7 +51,8 @@ function render() {
   } else if (page.type === "images") {
     renderImageBoxes(extra, page.imageBoxes);
   } else if (page.type === "text") {
-    renderText(extra, page.content);
+    // Only render the rich text block when content is present to avoid empty bubbles
+    if (page.content) renderText(extra, page.content);
   } else if (page.chart) {
     renderChart(extra, page.chartType);
   }
