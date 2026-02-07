@@ -130,19 +130,8 @@ Here's to some commemorative achievements:`,
   ,
   {
     title: "Anyways",
-    text: "Putting all the bs aside. Making this was hella fun I can't even lie.",
+    text: `Putting all the bs aside. Making this was hella fun I can't even lie. The extra, the not enough, everything. Moreover, it forced me to elaborate you in words, which I must say, is both an easy and hard task. Easy because I have known you for long and well enough for however long you and I have talked, and hard because some aspects I can't quite put a handle on. But I tried to nonetheless. This was such a throwback to the time when I made you the chatroom stuff, and I had to learn, which I did very enthusiastically as it comes under my area of interest. Funfact, everytime I make a wish which include multiple files and information that is depicted/ or edited and made by images as a base, I make a folder on their name. I have a folder named "Goldie" which is now filled with canva and pinterest material I used for her wish, as well as some random downloads, files, screenshots, documents etcetra, which happened because of my lazyness to change the default location. Same with one named "Kaju" and now the newest addition being "Jia". You are now free to go continue with the rest of the wish on discord. Also the earlier vision of the site, was quite different from what it turned out, it was supposed to be more whimisy, more cutesy, and I suppose, matched the vibe. Instead of a professional corporate style, however, my dear friend, and also the supposed graphic designer of this site, otherwise known as goldie. Continued to give me false hope which never came. I stand, betrayed by my own kin shared braincell.`,
     type: "text",
-    content: `
-      <h2 style="font-weight:700;">Anyways</h2>
-      <p>Putting all the bs aside. Making this was hella fun I can't even lie. The extra, the not enough, everything. Moreover, it forced me to elaborate you in words, which I must say, is both an easy and hard task.</p>
-
-      <p>Easy because I have known you for long and well enough for however long you and I have talked, and hard because some aspects I can't quite put a handle on. But I tried to nonetheless. This was such a throwback to the time when I made you the chatroom stuff, and I had to learn, which I did very enthusiastically as it comes under my area of interest.</p>
-
-      <p>Funfact, everytime I make a wish which include multiple files and information that is depicted/ or edited and made by images as a base, I make a folder on their name. I have a folder named "Goldie" which is now filled with canva and pinterest material I used for her wish, as well as some random downloads, files, screenshots, documents etcetra, which happened because of my lazyness to change the default location.  Same with one named "Kaju" and now the newest addition being "Jia".</p>
-
-      <p>You are now free to go continue with the rest of the wish on discord. Also the earlier vision of the site, was quite different from what it turned out, it was supposed to be more whimisy, more cutesy, and I suppose, matched the vibe. Instead of a professional corporate style, however, my dear friend, and also the supposed graphic designer of this site, otherwise known as goldie. Continued to give me false hope which never came. I stand, betrayed by my own kin shared braincell.</p>
-
-      <p style="font-size:0.9rem;opacity:0.85;">(small text) © 2026. All rights reserved. Yes, even this part.</p>
-    `
+    content: ``
   }
 ];
