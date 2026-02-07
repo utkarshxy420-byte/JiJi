@@ -23,13 +23,6 @@ Here's to some commemorative achievements:`,
       crashedOut: { value: "∞", label: "Times Crashed Out" },
       beingBigger: { value: 0, label: "Being The Bigger Person (Lol nah)" }
     }
-    ,
-    notes: [
-      "Be a good friend: I lost count yo",
-      "Times you were stronger than anyone else: enough times",
-      "Days when you made sense: Idk about allat",
-      "Times you self inserted yourself in the Kdrama or manhwa you watched: Jesus fucking christ"
-    ]
   },
   {
     title: "Memes That Represent Jia",
